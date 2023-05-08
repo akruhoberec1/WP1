@@ -1,0 +1,55 @@
+//frizerski salon
+
+drop database if_exists frizerski;
+create database frizerski;
+use frizerski;
+
+create table osoba(
+id int not null primary key auto_increment,
+ime varchar(50) not null,
+prezime varchar(50) not null,
+oib int(11) not null
+);
+
+
+create table djelatnice(
+id int primary key auto_increment not null,
+osoba int not null);
+
+create table korisnici(
+id int not null primary key auto_increment,
+osoba int not null);
+
+create table usluga(
+djelatnice int not null,
+korisnici int not null,
+termin datetime not null);
+
+
+
+//udruga za zaštitu
+
+drop database if_exists udruga;
+create database udruga;
+use udruga;
+
+create table osoba(
+id int not null primary key auto_increment,
+ime varchar(50) not null,
+prezime varchar(50) not null,
+oib int(11) not null
+);
+
+create table sticenici(
+id int not null primary key auto_increment,
+naziv varchar(50) not null,
+osoba int not null,
+zivotinja int not null);
+
+create table zivotinja(
+id int not null primary key auto_increment,
+naziv varchar(50)
+);
+
+
+
